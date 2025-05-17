@@ -9,10 +9,13 @@ html {
 body {
     background-color: #3a3d40;
     font-family: sans-serif;
+    color: #f1f1f1;
+    line-height: 1.4;
 }
 #welcome-section {
     height: 100vh;
 }
+
 /* navbar */
 #navbar {
     background-color: #be3144;
@@ -22,15 +25,15 @@ body {
     border-bottom: 2px solid #111;
 }
 #navbar ul{
-    list-style-type: none;
     display: flex;
     justify-content: flex-end;
 }
+#navbar li:nth-child(3) {
+    margin-right: 2rem;
+}
 #navbar a {
-    text-decoration: none;
     font-size: 2.2rem;
     color: #f1f1f1;
-    margin-right: 1rem;
     display: block;
     height: 100%;
     padding: 2rem;
@@ -38,9 +41,187 @@ body {
 #navbar a:hover {
     background-color: #45567d;
 }
+
+/* welcome section */
+#welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#welcome-section h1 {
+    font-size: 5.5rem;
+}
+#welcome-section p {
+    color: lightcoral;
+    font-size: 3rem;
+    font-style: italic;
+}
+
+/* projects */
+#projects {
+    background-color: #45567d;
+    padding: 2rem;
+    text-align: center;
+}
+
+.projects-header { 
+    margin-top: 7rem;
+    font-size: 4.2rem;
+    margin-bottom: 6rem;
+    position: relative;
+    display: inline-block;
+}
+.projects-header::after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 1px;
+    width: 100%;
+    display: block;
+    bottom: -5px;
+}
+/* less complex */
+/* .projects-header {
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid #fff
+} */
+
+/* projects */
+.projects-grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 2fr));
+    gap: 3.5rem;
+}
+
+.project:hover span {
+    opacity: 1;
+}
+
+.projects-grid a:nth-of-type(6) {
+    margin-bottom: 5rem;
+}
+
+.project-title {
+    background: #303841;
+    padding: 2rem;
+    font-size: 1.9rem;
+    color: #f1f1f1;
+    border: none;
+    border-radius: 4px;
+}
+.project-title span { 
+    opacity: 0;
+    color: #ff7f50;
+    transition: opacity 0.3s ease-out, color 0.3s ease-out;
+    font-size: 1.7rem;
+    font-weight: 100;
+    letter-spacing: 0.3rem;
+}
+
+/* button */
+.btn-show-all {
+    background: #303841;
+    padding: 1rem 2rem;
+    font-size: 1.9rem;
+    color: #f1f1f1;
+    display: inline-block;
+    margin-bottom: 7rem;
+    border-radius: 4px;
+    transition: background 0.3s ease-out;
+}
+.btn-show-all:hover {
+    background: #be3144;
+}
+.btn-show-all i {
+    margin-left: 1rem;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+}
+.btn-show-all:hover i {
+    transform: translateX(2px);
+}
+
+/* contact */
+#contact {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: #303841;
+    border-bottom: 4px solid #be3144;
+}
+
+.contact-header {
+    margin: 7rem 0 5rem;
+}
+.contact-header h2 {
+    font-size: 5.5rem;
+}
+.contact-header p {
+    font-size: 1.8rem;
+    font-weight: lighter;
+    font-style: italic;
+}
+/* link */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact-details {
+    font-size: 2.6rem;
+    color: #f1f1f1;
+    margin: 1rem 2rem;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+}
+.contact-details:hover {
+    transform: translateY(8px);
+}
+
+/* footer */
+footer {
+    padding: 3rem 2rem;
+    background: #303841;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 100;
+}
+footer p {
+    font-size: 1.8rem;
+}
+footer a {
+    color: #fff;
+}
+
+
+
+/* ------------------------------------ */
+
+/* common  */
+p {
+    font-size: 1.5rem;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
+.btn {
+    display: inline-block;
+}
+
 /* img */
 .project img {
     height: calc(100% - 6.8rem);
     width: 100%;
     object-fit: cover;
+    /* Tip: Use display: block to remove the default space below images caused by inline display */
+    display: block;
 }
