@@ -1,3 +1,4 @@
+/* === Reset & Base === */
 * , ::before, ::after {
     box-sizing: border-box;
     padding: 0;
@@ -16,7 +17,7 @@ body {
     height: 100vh;
 }
 
-/* navbar */
+/***** NAVBAR *****/
 #navbar {
     background-color: #be3144;
     position: fixed;
@@ -42,7 +43,7 @@ body {
     background-color: #45567d;
 }
 
-/* welcome section */
+/***** WELCOME SECTION *****/
 #welcome-section {
     display: flex;
     justify-content: center;
@@ -58,7 +59,7 @@ body {
     font-style: italic;
 }
 
-/* projects */
+/***** PROJECTS SECTION *****/
 #projects {
     background-color: #45567d;
     padding: 2rem;
@@ -81,6 +82,7 @@ body {
     display: block;
     bottom: -5px;
 }
+
 /* less complex */
 /* .projects-header {
     max-width: 640px;
@@ -88,20 +90,17 @@ body {
     border-bottom: 0.2rem solid #fff
 } */
 
-/* projects */
 .projects-grid {
     display: grid;
-    align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(32rem, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
     gap: 3.5rem;
+    max-width: 130rem;
+    margin: 0 auto;
+    align-items: stretch;
 }
 
 .project:hover span {
     opacity: 1;
-}
-
-.projects-grid a:nth-of-type(6) {
-    margin-bottom: 5rem;
 }
 
 .project-title {
@@ -121,14 +120,14 @@ body {
     letter-spacing: 0.3rem;
 }
 
-/* button */
+/***** BUTTONS *****/
 .btn-show-all {
     background: #303841;
     padding: 1rem 2rem;
     font-size: 1.9rem;
     color: #f1f1f1;
     display: inline-block;
-    margin-bottom: 7rem;
+    margin: 5rem 0 7rem;
     border-radius: 4px;
     transition: background 0.3s ease-out;
 }
@@ -144,7 +143,7 @@ body {
     transform: translateX(2px);
 }
 
-/* contact */
+/***** CONTACT SECTION *****/
 #contact {
     height: 80vh;
     display: flex;
@@ -167,7 +166,8 @@ body {
     font-weight: lighter;
     font-style: italic;
 }
-/* link */
+
+/***** LINKS *****/
 .contact-links {
     display: flex;
     justify-content: center;
@@ -184,7 +184,7 @@ body {
     transform: translateY(8px);
 }
 
-/* footer */
+/***** FOOTER *****/
 footer {
     padding: 3rem 2rem;
     background: #303841;
@@ -199,11 +199,9 @@ footer a {
     color: #fff;
 }
 
-
-
 /* ------------------------------------ */
 
-/* common  */
+/***** UTILITIES / COMMONS *****/
 p {
     font-size: 1.5rem;
 }
@@ -216,12 +214,23 @@ ul {
 .btn {
     display: inline-block;
 }
-
-/* img */
 .project img {
     height: calc(100% - 6.8rem);
     width: 100%;
     object-fit: cover;
     /* Tip: Use display: block to remove the default space below images caused by inline display */
     display: block;
+}
+
+/***** RESPONSIVE QUERIES *****/
+@media screen and (min-width: 730px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1090px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
